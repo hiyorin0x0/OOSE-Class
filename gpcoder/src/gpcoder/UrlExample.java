@@ -2,12 +2,13 @@ package gpcoder;
 
 import java.io.IOException;
 import java.net.URL;
+import java.net.URI;
  
 public class UrlExample {
  
     public static void main(String[] args) {
         try {
-            URL url = new URL("https://www.gpcoder.com:80/java/index.html?page=1&amp;amp;amp;order=desc#java-core");
+            URL url = URI.create("https://www.gpcoder.com:80/java/index.html?page=1&amp;amp;amp;order=desc#java-core").toURL();
             System.out.println("URL : " + url.toString());
             System.out.println("protocol : " + url.getProtocol());
             System.out.println("authority : " + url.getAuthority());
